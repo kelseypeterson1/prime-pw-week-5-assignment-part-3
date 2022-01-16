@@ -19,7 +19,7 @@ function addToCollection(titleInput, artistInput, yearPublishedInput) {
 console.log("Album added:", addToCollection("Immunity", "Clairo", "2019"));
 console.log("Album added:", addToCollection("Is This It", "The Strokes", "2001"));
 console.log("Album added:", addToCollection("Divers", "Joanna Newsom", "2015"));
-console.log("Album added:", addToCollection("Come Away with Me", "Norah Jones", "2002"));
+console.log("Album added:", addToCollection("Room on Fire", "The Strokes", "2003"));
 console.log("Album added:", addToCollection("Dear Catastrophe Waitress", "Belle and Sebastian", "2003"));
 console.log("Album added:", addToCollection("Good at Falling", "The Japanese House", "2019"));
 console.log("The collection now contains:",collection);
@@ -32,5 +32,19 @@ function showCollection(array) {
   }
 }
 
-// Testing hte showCollection function.
+// Testing the showCollection function.
 showCollection(collection);
+
+// Creating a function to find objects by artist.
+function findByArtist(artist) {
+  let artistList = [];
+  for (let i=0; i<collection.length; i++) {
+    if (collection[i].artist === artist) {
+      artistList.push(collection[i]);
+    }
+  }
+  return artistList;
+}
+
+// Testing the findByArtist function.
+console.log("Finding albums by The Strokes",findByArtist("The Strokes"));
